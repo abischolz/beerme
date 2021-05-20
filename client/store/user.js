@@ -22,6 +22,7 @@ const removeUser = () => ({type: REMOVE_USER})
  * THUNK CREATORS
  */
 export const me = () => async dispatch => {
+  console.log('in me thunk')
   try {
     const res = await axios.get('/auth/me')
     dispatch(getUser(res.data || defaultUser))
@@ -32,12 +33,15 @@ export const me = () => async dispatch => {
 
 export const auth = (email, password, method) => async dispatch => {
   let res
+  console.log('in auth thunk')
+  // this is signup i think
   try {
     res = await axios.post(`/auth/${method}`, {email, password})
   } catch (authError) {
     return dispatch(getUser({error: authError}))
   }
 
+  // this is login
   try {
     dispatch(getUser(res.data))
     history.push('/home')

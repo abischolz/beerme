@@ -1,35 +1,58 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
+import {TextField, Button} from '@material-ui/core'
+import {spacing} from '@material-ui/system'
 import {auth} from '../store'
+// import Home from './Home'
 
 /**
  * COMPONENT
  */
-const AuthForm = props => {
+export const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
-
+  console.log('this.props', props)
   return (
-    <div>
+    <div className="auth">
       <form onSubmit={handleSubmit} name={name}>
-        <div>
+        <div className="authInput">
           <label htmlFor="email">
-            <small>Email</small>
+            <small style={{padding: '10px'}}>Email</small>
           </label>
-          <input name="email" type="text" />
+          <TextField
+            name="email"
+            type="text"
+            id="filled-secondary"
+            variant="filled"
+            color="secondary"
+          />
         </div>
-        <div>
+        <div className="authInput">
           <label htmlFor="password">
-            <small>Password</small>
+            <small style={{padding: '10px'}}>Password</small>
           </label>
-          <input name="password" type="password" />
+          <TextField
+            name="password"
+            type="password"
+            id="filled-secondary"
+            variant="filled"
+            color="secondary"
+          />
         </div>
-        <div>
-          <button type="submit">{displayName}</button>
+        <div className="authInput">
+          <Button
+            id="button"
+            type="submit"
+            variant="contained"
+            color="secondary"
+          >
+            {displayName}
+          </Button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-      <a href="/auth/google">{displayName} with Google</a>
+      {/* <a href="/auth/google">{displayName} with Google</a> */}
+      {/* <div><Home /></div> */}
     </div>
   )
 }
@@ -75,9 +98,11 @@ export const Signup = connect(mapSignup, mapDispatch)(AuthForm)
 /**
  * PROP TYPES
  */
+
 AuthForm.propTypes = {
   name: PropTypes.string.isRequired,
   displayName: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   error: PropTypes.object
 }
+// console.log('AuthForm.proptypes = ', AuthForm.propTypes);

@@ -1,21 +1,147 @@
-body {
-  font-family: sans-serif;
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+
+  /* flex-direction: column; */
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  /* padding-top: 5px; */
+}
+
+.App-header-style {
+  display: flex;
+  flex-flow: column nowrap;
+
+  /* justify-content: space-between; */
+}
+/* .App-link {  
+  color: #61dafb;
+} */
+
+.searchBox {
+  block-size: 30px;
+  /* padding: 50px; */
+  width: 25%;
+  position: right;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav {
+  padding: 10px;
+
+  /* display: absolute; */
+  /* justify-content: flex-start; */
+}
+
+.map-container {
+  height: 50vh;
+  width: 50vw;
+  position: flex;
+}
+
+.sidebar {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #ffffff;
+  padding: 6px 12px;
+  font: 15px/24px monospace;
+  z-index: 1;
+  position: absolute;
+  top: -100;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
+}
+
+.breweriesFilters {
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.pageTitle {
+  text-align: center;
+}
+.breweryContainer {
+  /* display: inline-flex;
+  flex-flow: row wrap; */
+  justify-content: center;
+}
+
+#indivBrewery {
+  padding: 10px;
+  margin: 20px;
+  /* border-style: solid;
+  border-color: teal;
+  border-radius: 5px; */
+  flex-grow: 1;
+}
+
+/* Button {
+  margin: 50px;
+  size: small;
+  justify-content: flex-end;
+
+} */
+
+.authInput {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 3;
+  height: 30%;
+}
+
+.auth {
+  display: flex;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 15px;
+}
+
+#mapButton {
+  margin-top: 10px;
 }
 
 a {
-  text-decoration: none;
+  color: white;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-label {
-  display: block;
-}
-
-nav a {
-  display: inline-block;
-  margin: 1em;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
